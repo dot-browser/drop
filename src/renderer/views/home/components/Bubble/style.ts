@@ -3,13 +3,13 @@ import { centerIcon } from '../../../../mixins/images';
 import { icons } from "@/renderer/constants/icons";
 
 export const StyledBubble = styled.div`
-    width: 52px;
-    height: 52px;
+    width: 60px;
+    height: 60px;
     border-radius: 100px;
     position: relative;
 
     ${({ icon, isFirst }: { icon: any; isFirst: boolean }) => css`
-        margin-left: ${isFirst == true ? '0px' : '45px'};
+        margin-left: ${isFirst == true ? '0px' : '35px'};
         background-color: ${icon == icons.laptop 
             ? '#C2FFD4' 
             : icon == icons.desktop 
@@ -22,11 +22,11 @@ export const StyledBubble = styled.div`
 
         &:before {
             content: ' ';
-            mask-size: 26px;
+            mask-size: 28px;
             mask-position: center;
             mask-repeat: no-repeat;
-            height: 26px;
-            width: 26px;
+            height: 32px;
+            width: 32px;
             position: absolute;
             display: block;
             top: 50%;
