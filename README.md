@@ -1,6 +1,6 @@
 # ☔ Drop
 
-> Juicy is a simple and versatile way to share content to between devices. 
+> Drop is a simple and versatile way to share content to between devices. 
 
 ## 🖼 Screenshots
 
