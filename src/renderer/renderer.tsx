@@ -8,7 +8,8 @@ import * as ReactDOM from 'react-dom';
 import '@public/style.css';
 import { StyledApp } from './components/App/style';
 import { fonts } from './constants/fonts';
-import { Toolbar } from './components/Toolbar';
+import Toolbar from './components/Toolbar';
+import { Home } from './views/home';
 
 const styleElement = document.createElement('style');
 
@@ -38,6 +39,7 @@ document.head.appendChild(styleElement);
 const App = () => (
   <StyledApp>
     <Toolbar />
+    <Home />
   </StyledApp>
 )
 

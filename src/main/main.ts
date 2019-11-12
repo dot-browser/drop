@@ -12,7 +12,9 @@ function createWindow(): void {
     mainWindow = new BrowserWindow({
         height: 700,
         width: 450,
-        icon: __dirname + '/static/app-icons/icon.png',
+        minHeight: 700,
+        minWidth: 450,
+        icon: path.resolve(__dirname + '/static/app-icons/icon.png'),
         frame: false,
         webPreferences: {
             webSecurity: false,

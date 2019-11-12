@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
 export const StyledToolbar = styled.div`
-    display: flex; 
-    justify-content: space-between;
     height: 38px;
     -webkit-app-region: drag;
     user-drag: none;
     user-select: none;
+    display: flex;
+    justify-content: space-between;
 `;
 
 export const DropLogo = styled.img`

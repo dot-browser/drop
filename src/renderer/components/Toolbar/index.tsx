@@ -3,10 +3,29 @@ import { WindowsControls } from 'react-windows-controls';
 import { StyledToolbar, DropLogoWrapper, DropLogo } from './style';
 import { remote } from 'electron';
 import { icons } from '@/renderer/constants/icons';
+import { onMaximize, onMinimize, onClose, isMaximized } from './../../actions/window';
+import { Actions } from '../Actions';
+import { hot } from 'react-hot-loader/root';
+import { Separator } from '../Separator/style';
+import ToolbarButton from './../ToolbarItem/ToolbarItem';
 
-export const Toolbar = () => (
-    <StyledToolbar>
-        <div><></></div>
-        <WindowsControls style={{ webkitAppRegion: 'no-drag' }} onClose={() => remote.getCurrentWindow().close()} onMinimize={() => remote.getCurrentWindow().minimize()} onMaximize={() => remote.getCurrentWindow().maximize()} isMaximized={remote.getCurrentWindow().isMaximized()} />
+const Toolbar = () => (
+    <StyledToolbar id="toolbar">
+        <div style={{ marginLeft: '8px' }}>
+            
+        </div>
+        <div style={{ justifyContent: 'flex-end', display: 'flex' }}>
+            <Actions />
+            <Separator />
+            <WindowsControls 
+                style={{ WebkitAppRegion: 'no-drag' }} 
+                onClose={onClose}
+                onMinimize={onMinimize} 
+                onMaximize={onMaximize} 
+                isMaximized={isMaximized()} 
+            />
+        </div>    
     </StyledToolbar>
 )
+
+export default hot(Toolbar);

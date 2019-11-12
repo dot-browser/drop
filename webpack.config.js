@@ -20,6 +20,10 @@ const commonConfig = {
   mode: isEnvProduction ? 'production' : 'development',
   output: { path: srcPaths('dist') },
   node: { __dirname: false, __filename: false },
+  devServer: {
+    hot: false,
+    inline: false,
+  },
   resolve: {
     alias: {
       '@': srcPaths('src'),
@@ -50,12 +54,12 @@ const commonConfig = {
         },
       },
       {
-        test: /\.(gif|jpe?g|png|svg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-          },
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        exclude: /node_modules/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: '[hash]-[name].[ext]',
         },
       }
     ],
